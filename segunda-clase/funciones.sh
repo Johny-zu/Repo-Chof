@@ -66,7 +66,7 @@ case ${1} in
 esac
 
 ## lee por parametros, la variable seria opt
-while getops "abc" opt; do
+while getopts "abc" opt; do
     case $opt in
         a) 
             echo "El numero es 1"
@@ -79,5 +79,23 @@ while getops "abc" opt; do
             ;; 
         *)
             echo "El numero ingresado no es 1, 2 o 3, revise las instrucciones" 
+    esac
+done
+
+## lee por parametros, la variable seria opt
+while getops "a:b:c" opt; do
+    case $opt in
+        a) 
+            echo "El numero es a"
+            echo "El valor de -a es $OPTARG"
+            ;;
+        b) 
+            echo "El numero es b"
+            ;; 
+        c) 
+            echo "El numero es c"
+            ;; 
+        *)
+            echo "El numero ingresado no es a, b o c, revise las instrucciones" 
     esac
 done
