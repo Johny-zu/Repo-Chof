@@ -6,4 +6,6 @@ sudo apt-get update
 sudo apt upgrade
 
 sudo apt install mysql-server
-mysql -V
+sudo mysql -V
+
+sudo systemctl status mysql
