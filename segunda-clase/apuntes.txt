@@ -1,0 +1,33 @@
+permisos, peso, usuario, grupo, fecha, nombre
+-rw-r--r-- 1 root root 81 Mar 15 01:11 config.sh
+los primeros tres son usuarios
+el segundo grupo
+el tercero es todo lo demas
+
+read puedo
+write
+execute
+
+para cambiar permisos 
+chmod 777 <archivo> Tiene todos los permisos 
+
+en el chemod, son binarios, si son 777 es porque tienen todos los bits levantados que le dan permisos
+cada uno son 3 bits
+6. 1 1
+
+101, 100, 001
+rw- r-- r--
+
+001 -> 1
+010 -> 2
+011 -> 3
+100 -> 4
+101 -> 5
+111 -> 6
+
+544
+
+el +x es darle ejecutable a todos
+con el + se le da permisiso a todos parejo
+
+chmod +x <cosa que buscas cambiar permisos>

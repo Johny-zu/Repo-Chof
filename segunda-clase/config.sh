@@ -1,11 +1,14 @@
-mkdir finalBoss
-cd finalBoss
-touch config.sh
+# mkdir finalBoss
+# cd finalBoss
+# touch config.sh
 
-sudo apt-get update
-sudo apt upgrade
+# poner primero chmod +x config.sh
+# correr con ./config.sh
 
-sudo apt install mysql-server
+sudo apt-get update -y
+sudo apt upgrade -y
+
+sudo apt install -y mysql-server 
 sudo mysql -V
 
 sudo systemctl status mysql
@@ -20,4 +23,3 @@ show databases;
 
 # nos movemos a la base de datos de mysql 
 use mysql;
-
