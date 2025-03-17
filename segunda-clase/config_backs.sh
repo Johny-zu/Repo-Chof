@@ -1,3 +1,10 @@
+# Descripción: Script para realizar respaldos de bases de datos MySQL.
+# pasos para ejecutar este script
+# 1. Cambiamos el nombre por ajgh-angel-johnattan-gil-herrera.sh
+# 2. Le damos permisos de ejecución con chmod +x ajgh-angel-johnattan-gil-herrera.sh
+# 3. Ejecutamos el script con ./ajgh-angel-johnattan-gil-herrera.sh -u root -d nombre_bd -o /tmp/backup.sql
+# 4. Verificamos que se haya creado el archivo de respaldo en la ruta especificada.
+
 #!/bin/bash
 
 # Función para mostrar ayuda
@@ -51,3 +58,7 @@ else
     echo "Error: No se pudo realizar el backup."
     exit 1
 fi
+
+
+# para correrrlo usamos 
+./IS-NAME.sh -u root -d nombre_bd -o /tmp/backup.sql

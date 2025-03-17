@@ -1,16 +1,31 @@
-# mkdir finalBoss
-# cd finalBoss
-# touch config.sh
-
 # poner primero chmod +x config.sh
 # correr con ./config.sh
 
+# primero checamos que tenmos instlaado
+mysql --version
+mysqldump --version
+bash --version
+
+# hacemos las carpetas
+mkdir proyectoF
+cd proyectoF
+touch config.sh
+
+# hacemos los updates de los paquetes
 sudo apt-get update -y
 sudo apt upgrade -y
 
+# instalamos mysql en caso de ser necesario
 sudo apt install -y mysql-server 
 sudo mysql -V
 
+# sudo service mysql start
+sudo service mysql start
+Start-Service MySQL
+Get-Service MySQL*
+
+# iniciamos mysql
+sudo service mysql start
 sudo systemctl status mysql
 
 cd /var/backups
