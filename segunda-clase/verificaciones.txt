@@ -5,3 +5,5 @@ USE prueba_backup;
 SHOW TABLES;
 SELECT * FROM clientes;
 
+-- asi corres la cosa
+./IS-NAME.sh -u root -d nombre_bd -o /tmp/backup.sql
