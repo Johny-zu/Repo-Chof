@@ -4,9 +4,9 @@ los primeros tres son usuarios
 el segundo grupo
 el tercero es todo lo demas
 
-read puedo
-write
-execute
+read puedo leer y visualizar
+write puedo escribir 
+execute puedo ejecutar las cosas
 
 para cambiar permisos 
 chmod 777 <archivo> Tiene todos los permisos 
@@ -15,8 +15,8 @@ en el chemod, son binarios, si son 777 es porque tienen todos los bits levantado
 cada uno son 3 bits
 6. 1 1
 
-101, 100, 001
-rw- r-- r--
+101, 100, 100
+rw-   r-- r--
 
 001 -> 1
 010 -> 2
@@ -25,9 +25,8 @@ rw- r-- r--
 101 -> 5
 111 -> 6
 
-544
-
 el +x es darle ejecutable a todos
 con el + se le da permisiso a todos parejo
 
 chmod +x <cosa que buscas cambiar permisos>
+aunque es una mala practica por si ocupas que algunos tengan solo ciertos permisos
