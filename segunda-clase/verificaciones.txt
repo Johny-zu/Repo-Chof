@@ -1,0 +1,7 @@
+consultas para la bd
+
+SHOW DATABASES;
+USE prueba_backup;
+SHOW TABLES;
+SELECT * FROM clientes;
+
