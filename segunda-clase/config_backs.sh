@@ -61,4 +61,8 @@ fi
 
 
 # para correrrlo usamos 
-./IS-NAME.sh -u root -d nombre_bd -o /tmp/backup.sql
+#./IS-NAME.sh -u root -d nombre_bd -o /tmp/backup.sql
+# ./AJGH-AngelJohnattanGilHerrera.sh -u root -d prueba_backup -o /tmp/backup.sql
+
+# para ver el archivo creado
+# cat /tmp/backup.sql
