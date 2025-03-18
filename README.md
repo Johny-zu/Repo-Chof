@@ -16,3 +16,12 @@ este script realiza lo siguiente:
 
 ## Tercera clase
 Estas carpetas veremos sobre apuntes y cosas acerca de docker, aqui podremos ver como empezamos a levantar los conteiners entre otras cosas necesairas para trabajar con docker dentro de la consola de gcp
+
+### 01 
+este es la primera parte, como la intro de los comandos
+
+### 02 
+en este es el primero examen que se hizo de docker 
+
+### 03 
+En este es un archivo para docker file
