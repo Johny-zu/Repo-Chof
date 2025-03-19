@@ -1,0 +1,20 @@
+services: 
+  vote:
+    image: AJGH/vote-app:vote
+    build:
+      context: ./vote
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ./vote:/usr/local/app
+    ports:
+      - 8080:80
+  worker:
+    build: 
+      context: ./worker
+      dockerfile: Dockerfile
+  redis: 
+    image: redis:alpine
+    volumes:
+      - ./healthchecks:/healthchecks
+    
