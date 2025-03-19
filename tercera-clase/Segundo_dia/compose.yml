@@ -1,14 +1,14 @@
 services:
   vote:
-    image: jackmurillo/vote-app:vote
-    build: 
+    build:
       context: ./vote
       dockerfile: Dockerfile
       target: dev
-    volumes: 
+    image: ajgh/vote-app:vote
+    volumes:
       - ./vote:/usr/local/app
     ports:
-      - 8080:80
+      - "8080:80"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost"]
       interval: 15s
@@ -18,8 +18,12 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+    networks: 
+      - back-tier
+      - front-tier
+
   worker:
-    build: 
+    build:
       context: ./worker
       dockerfile: Dockerfile
     depends_on:
@@ -27,18 +31,30 @@ services:
         condition: service_healthy
       db:
         condition: service_healthy
+    networks:
+      - back-tier
+
   redis:
     image: redis:alpine
-    volumes: 
-      - ./healthchecks:/healthchecks
+    networks:
+      - back-tier
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
   result:
     build:
       context: ./result
       dockerfile: Dockerfile
-    volumes: 
+    image: ajgh/vote-app:result
+    volumes:
       - ./result:/usr/local/app
     ports:
-      - 8081:80 
+      - "8081:80"
+    networks:
+      - front-tier
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost"]
       interval: 15s
@@ -48,17 +64,26 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
   db:
-    image: jackmurillo/vote-app:db
-    build: 
-      context: ./bd
-      dockerfile: Dockerfile
-    volumes:
-      - db-data:/var/lib/postgresql/data
+    image: postgres:15-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    ports:
-      - 5432:5432
+      POSTGRES_DB: db
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - back-tier
+
 volumes:
-      db-data:
+  db-data:
+
+networks:
+  front-tier: 
+  back-tier:
