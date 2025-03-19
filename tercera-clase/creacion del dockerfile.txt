@@ -1,0 +1,34 @@
+-- Instrucciones
+-- Para empezarlo podemos hacer un dockerfile normal en el mismo VSC o desde la terminal en vim, la caracteristica que tienen los dockerfiles es que estos no tienen una extension, es decir que no llevan un .pdf, .py, .java, etc
+-- entonces para que se pueda generar las instrucciones seria
+touch dockerfile
+vim dockerfile
+
+-- Para generar un dockerfile se tiene que saber la construccion, la cual es 
+
+-- ¿donde estamos o que somos, en que basamos la imagen?
+FROM ubuntu:16.04 -- en esta linea decimos que nos vasaremos en una imagen de ubuntu con esa version
+FROM -- desde donde
+<SO> -- el sustema operativo que estamos selccionando 
+:<version> -- de qui seguimos la version que requiera la imagen para pasarlo 
+
+--  Para seguir decimos las siguientes instrucciones requeridas
+RUN apt-get pudate
+RUN -- ejecuta el comando que requieras que haga el dockerfile, para que este sea ejecutado
+RUN <> -- lo que sigue sera lo que quieres que haga el dockerfile, este servira para que pueda reconocer indicaciones, otro ejemplo es
+
+RUN apt-get install -y pyhton3 -- El -y sirve para que sin confirmaciones pueda avanzar la instalacion 
+
+-- este seria el dockerfile
+FROM ubuntu:16.04
+RUN apt-get pudate
+RUN apt-get install -y pyhton3
+
+-- Como un extra se puede saber quien es el que esta dandole mantenimiento a la imagen haciendo el siguiente comando despues del from de la iamgen 
+MAINTENER <mail>
+-- aunque ahora se usa con lebel
+LABEL maintener = "<mail>"
+
+-- para ejecutar nuestro dockerfile se usa el siguiente comando 
+docker build .
+-- el punto dice que es el docker file que teniamos 
