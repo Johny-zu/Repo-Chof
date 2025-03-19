@@ -1,34 +1,64 @@
-services: 
+services:
   vote:
-    image: AJGH/vote-app:vote
-    build:
+    image: jackmurillo/vote-app:vote
+    build: 
       context: ./vote
       dockerfile: Dockerfile
       target: dev
-    volumes:
+    volumes: 
       - ./vote:/usr/local/app
     ports:
       - 8080:80
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      test: ["CMD", "curl", "-f", "http://localhost"]
       interval: 15s
       timeout: 5s
       retries: 3
       start_period: 10s
+    depends_on:
+      redis:
+        condition: service_healthy
   worker:
     build: 
       context: ./worker
       dockerfile: Dockerfile
-  redis: 
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+  redis:
     image: redis:alpine
-    volumes:
+    volumes: 
       - ./healthchecks:/healthchecks
   result:
-    build: 
+    build:
       context: ./result
       dockerfile: Dockerfile
-    volumes:
-      - ./resilt:/usr/local/app
+    volumes: 
+      - ./result:/usr/local/app
     ports:
-      - 8081:80
-      
+      - 8081:80 
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: jackmurillo/vote-app:db
+    build: 
+      context: ./bd
+      dockerfile: Dockerfile
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+volumes:
+      db-data:
