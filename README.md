@@ -24,3 +24,4 @@ Aqui vimos los comandos basicos y unas cosas mas
 Esta fue la evaluacion para retroalimentar el primer dia de docker
 
 ### Segundo dia 
+Con la finalizacion de docker basico, daremos inicio al docker un poco mas avanzado, mas informacion en la misma carpeta del segundo dia de la tercera clase
