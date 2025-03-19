@@ -17,14 +17,10 @@ este script realiza lo siguiente:
 ## Tercera clase
 Estas carpetas veremos sobre apuntes y cosas acerca de docker, aqui podremos ver como empezamos a levantar los conteiners entre otras cosas necesairas para trabajar con docker dentro de la consola de gcp
 
-### 01 
-este es la primera parte, como la intro de los comandos
+### primer dia 
+Aqui vimos los comandos basicos y unas cosas mas
 
-### 02 
-en este es el primero examen que se hizo de docker 
+### Examen docker dia 1
+Esta fue la evaluacion para retroalimentar el primer dia de docker
 
-### 03 
-En este es un archivo para docker file, este tiene otros archivos que son parte de la practica el cual es el requirments.txt y el app.py
-
-para usarlo se usa
-> docker build -t mi_flask:A .
+### Segundo dia 
