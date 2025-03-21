@@ -4,3 +4,18 @@ kubectl get pods
 kubectl get pods,rs,deploy -n team-academia
 kubectl exec -it variables-67fdd45d9-txnxm -n team-academia -- bash
 kubectl apply -f deployment-sql.yaml
+
+# comandos externos de un history
+  1  exit
+    2  halt
+    3  ls
+    4  kubectl create ns team-academia
+    5  kubectl apply -f deployment-mysql.yaml 
+    6  kubectl get pods,svc,rs,deply -n team-academia
+    7  kubectl get pods,svc,rs,deployment -n team-academia
+    8  kucectl exec -it bd-5cf546dfd7-ll8b8 -n team-academia -- bash
+    9  kubectl exec -it bd-5cf546dfd7-ll8b8 -n team-academia -- bash
+   10  history
+
+-- dentro de la bd
+mysql -u usubd -p kubernetes
