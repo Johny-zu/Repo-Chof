@@ -1,0 +1,6 @@
+kubectl create namespace team-academia
+kubectl create -f deployment-mysql.yaml
+kubectl get pods
+kubectl get pods,rs,deploy -n team-academia
+kubectl exec -it variables-67fdd45d9-txnxm -n team-academia -- bash
+kubectl apply -f deployment-sql.yaml

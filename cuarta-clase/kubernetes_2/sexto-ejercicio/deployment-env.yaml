@@ -16,8 +16,8 @@ spec:
       containers:
       - name: var
         image: gcr.io/google-samples/node-hello:1.0
-      env: 
-        - name: Nombre
-          value: "Academia"
-        - name: PROPIETARIO
-          value: "Softtek"
+        env:
+         - name: Nombre
+           value: "Academia"
+         - name: PROPIETARIO
+           value: "Softtek"

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bd
+  namespace: team-academia
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: kubernetes
+          - name: MYSQL_USER
+            value: usudb
+          - name: MYSQL_PASSWORD    
+            value: usupass
+          - name: MYSQL_DATABASE
+            value: kubernetes
+ 
