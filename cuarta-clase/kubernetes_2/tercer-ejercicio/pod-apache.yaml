@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache-lb
+  labels:
+    type: back
+spec:
+  containers:
+  - name: apache-lb
+    image: httpd:latest
+    ports:
+      - containerPort: 80

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: redis-cli
   labels:
-    name: cli
+    name: redis-cli
 spec:
   containers:
   - name: redis-cli
