@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-maestro
+  labels: 
+    rediis: maestro
+spec:
+  containers:
+  - name: redis-maestro
+    image: redis:latest
