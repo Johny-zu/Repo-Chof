@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busy
+  namespace: team-academia
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: busy
+    image: k8s.gcr.io/busybox
+    command: ['/bin/sh', '-c', 'sleep 1000000']
+    volumeMounts:
+    - name: volumen-configmap
+      mountPath: /etc/config
+  volumes:
+  - name: volumen-configmap
+    configMap:
+      name: vol-busy
