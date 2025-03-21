@@ -16,3 +16,6 @@ kubectl delete secret test-secret
 kubectl create secret generic datos -n team-academia --from-file=datos.txt=
 kubectl get pods -n team-academia
 kubectl exec -it test-container -n team-academia -- bash
+
+# apartir del second secret
+kubectl
