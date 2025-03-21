@@ -19,13 +19,5 @@ vamos a crear una dato de llave
 > get v1
 > get prueba 
 
-### comandos usados
-kubectl create -f .
-
-kubectl get pods,svc
- 
-kubectl exec -it redis-cli --bash
-
-redis-cli -h redis-svc
-
-set v1 21
+## carpeta de la cuarta clase
+aqui hay muchas carpetas(k8s2) ya que es mucha practica, cada una tiene su readme de comandos
