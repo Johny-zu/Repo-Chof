@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: variables
+  namespace: team-academia
+spec:
+  selector:
+    matchLabels:
+      app: var
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: var
+    spec:
+      containers:
+      - name: var
+        image: gcr.io/google-samples/node-hello:1.0
+      env: 
+        - name: Nombre
+          value: "Academia"
+        - name: PROPIETARIO
+          value: "Softtek"
