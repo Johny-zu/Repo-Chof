@@ -14,3 +14,8 @@ kubectl get secrets -n team-academia
 kubectl get pods -n team-academia
  
 # kubectl create secret docker-registry <name-secret> --docker-server=docker.io --docker-username= --docker-password= --docker-email=
+
+# Segundo ejercicio
+kubectl apply -f .
+kubectl get rs -n team-academia
+kubectl scale deployment apache -n team-academia --replicas 5
