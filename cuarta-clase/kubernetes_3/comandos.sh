@@ -34,3 +34,8 @@ kubectl apply -f .
 kubectl get pods -n team-academia
 kubectl describe deployment -n team-academia nginx-memory
 kubectl describe pods -n team-academia
+
+# Quinto ejercicio
+kubectl create ns team-academia
+kubectl apply -f .
+kubectl get pods -n team-academia
