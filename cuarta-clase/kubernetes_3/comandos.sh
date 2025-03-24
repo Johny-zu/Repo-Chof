@@ -19,3 +19,11 @@ kubectl get pods -n team-academia
 kubectl apply -f .
 kubectl get rs -n team-academia
 kubectl scale deployment apache -n team-academia --replicas 5
+
+# tercer ejercicio
+kubectl create ns team-academia
+kubectl apply -f .
+kubectl get pods -n team-academia
+kubectl describe pod nginx-mem
+
+kubectl top pod nginx-mem -n team-academia
