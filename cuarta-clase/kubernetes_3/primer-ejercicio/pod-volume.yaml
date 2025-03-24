@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: team-academia
+  labels:
+    name: nginx-vol
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    volumeMounts:
+    - name: volumen-secretos
+      mountPath: /tmp/DATOS
+  imagePullSecrets:
+  - name: service-connection-docker
+  volumes:
+    - name: volumen-secretos
+      secret:
+        secretName: volumen
+  restartPolicy: Never
+ 
