@@ -39,3 +39,7 @@ kubectl describe pods -n team-academia
 kubectl create ns team-academia
 kubectl apply -f .
 kubectl get pods -n team-academia
+
+# comando para estresar 
+kubectl autoscale deployment apache --cpu-percent=40 --min=1 --max=8  
+ 
