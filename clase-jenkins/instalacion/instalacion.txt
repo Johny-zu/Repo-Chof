@@ -23,3 +23,8 @@ sudo apt install jenkins -y
 # Vemos como andamos
 sudo systemctl start jenkins
 sudo systemctl status jenkins
+
+
+# corremos con 
+docker-compose up --build
+sudo chown -R 1000:1000 jenkins-data
